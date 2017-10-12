@@ -4,14 +4,14 @@ FROM ubuntu:xenial
 RUN apt-get update -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y apt-transport-https curl bzip2 xz-utils
 
-# Installing Node.js v8.1.4
-RUN curl https://nodejs.org/dist/v8.1.4/node-v8.1.4-linux-x64.tar.xz > /root/node-v8.1.4-linux-x64.tar.xz
-RUN tar xf /root/node-v8.1.4-linux-x64.tar.xz -C /root
+# Installing Node.js v8.6.0
+RUN curl https://nodejs.org/dist/v8.6.0/node-v8.6.0-linux-x64.tar.xz > /root/node-v8.6.0-linux-x64.tar.xz
+RUN tar xf /root/node-v8.6.0-linux-x64.tar.xz -C /root
 RUN ln -s /root/node/bin/node /usr/bin/node
 RUN ln -s /root/node/bin/npm /usr/bin/npm
 # Clean-up
-RUN mv /root/node-v8.1.4-linux-x64 /root/node
-RUN rm /root/node-v8.1.4-linux-x64.tar.xz
+RUN mv /root/node-v8.6.0-linux-x64 /root/node
+RUN rm /root/node-v8.6.0-linux-x64.tar.xz
 
 # Installing Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
