@@ -28,6 +28,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y chromium-browser
 RUN mv /usr/bin/chromium-browser /usr/bin/chromium-browser-bin
 ADD assets/chromium-browser /usr/bin/chromium-browser
 RUN chmod +x /usr/bin/chromium-browser
+RUN export CHROME_BIN="/usr/bin/chromium-browser"
 
 # We don't need MS fonts yet, but it was pain the arse to install them correctly, so let's keep this snippet here
 # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget cabextract
